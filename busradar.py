@@ -26,12 +26,9 @@ def get_led_data():
 # Funktion zum Steuern der LEDs
 def control_leds(led_data):
     # Setup LED strip
-    strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
-    strip.begin()
-
     # Schleife durch die LED-Daten und setzen der Farben
     for led_info in led_data:
-        led_index = int(led_info['led']) - 1  # LEDs werden normalerweise von 1 bis n nummeriert
+        led_index = int(led_info['led'])
         color_str = led_info['color']
         color_int = Color(*(int(color_str[i:i+2], 16) for i in (1, 3, 5)))  # Umwandlung von Hexadezimalfarbe in Farbnummer
         strip.setPixelColor(led_index, color_int)
@@ -40,6 +37,8 @@ def control_leds(led_data):
     strip.show()
 
 if __name__ == "__main__":
+    strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
+    strip.begin()
     while True:
         led_data = get_led_data()
         if led_data:
