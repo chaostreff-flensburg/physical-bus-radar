@@ -67,4 +67,4 @@ INSERT INTO routes(route_point) VALUES (ST_GeomFromText('POINT(9.4335672882 54.7
 INSERT INTO routes(route_point) VALUES (ST_GeomFromText('POINT(9.4336095171 54.7921694249)', 4326));
 INSERT INTO routes(route_point) VALUES (ST_GeomFromText('POINT(9.4336215391 54.7916855258)', 4326));
 INSERT INTO routes(route_point) VALUES (ST_GeomFromText('POINT(9.4336719955 54.7912024519)', 4326));
-INSERT INTO routes(route_point) VALUES (ST_GeomFromText('POINT(9.438453, 54.787335)', 4326));
+INSERT INTO routes(route_point) VALUES (ST_GeomFromText('POINT(9.438453 54.787335)', 4326));
